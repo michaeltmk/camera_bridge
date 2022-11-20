@@ -42,8 +42,8 @@ class MipcAuth {
       if (status === "success") {
         //page.render("page.png");
         await page.on('onResourceRequested', (requestData)=> {
-          //console.info('Requesting', requestData.url.substr(0,250))
-          if (requestData.url.indexOf('ccm_misc_get') > -1) {
+          console.info('Requesting', requestData.url.substr(0,250))
+          if (requestData.url.indexOf('ccm_disk_ctl') > -1) {
             this.urlcapture = requestData.url
             this.log('URLCAPTURE', this.urlcapture)
       	    this.configureRTMP()
