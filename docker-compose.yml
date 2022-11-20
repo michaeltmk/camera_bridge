@@ -1,0 +1,10 @@
+version: "3"
+services:
+  mipc:
+    build: .
+    container_name: mipc
+    restart: always
+    volumes:
+      - .:/app
+    # command: sh -c "sleep infinity"
+    network_mode: host
