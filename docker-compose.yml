@@ -4,7 +4,8 @@ services:
     build: .
     container_name: mipc
     restart: always
-    volumes:
-      - .:/app
+    # volumes:
+    #   - .:/app
     # command: sh -c "sleep infinity"
-    network_mode: host
+    # network_mode: host
+

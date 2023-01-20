@@ -52,12 +52,12 @@ class MipcAuth {
         });
         await page.evaluate(function(config) {
           document.getElementById("signin_name").value = config.camid
-          document.getElementById("signin_show_pw").value = config.password
+          // document.getElementById("signin_show_pw").value = config.password
           document.getElementById("signin_pw").value = config.password
           document.getElementById("sign_in").click()
           //on emule un clic sur le bouton de capture
           setTimeout(function() {
-            document.getElementById('camera_off_pic').click();
+            document.getElementById('video_play').click();
           }, 5000)
         }, this.config)
       }
