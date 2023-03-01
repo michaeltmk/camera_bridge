@@ -99,6 +99,17 @@ class MipcAuth {
      var request = axios.get(this.config.url + this.rtmp.replace('%NID%',dsess_nid).replace('%HANDLE%',handle).replace('%HQID%',hqid)).then( response => {
          var json = this.parseMessage(response.data)
          this.log('RTMP URI', json.data.uri.url)
+         const fs = require('fs');
+
+         var content = json.data.uri.url;
+         
+         fs.writeFile('rtmp.txt', content, err => {
+           if (err) {
+             console.error(err);
+           }
+           // file written successfully
+         });
+
          // -i rtmp://192.168.2.135:88/videoMain -s 640x480 -b:v 512k -c:v copy -f hls -hls_time 2 -hls_playlist_type event -c:a aac -b:a 128k -ac 2 /var/www/html/mpeg-dash/video.m3u8
          const token = json.data.uri.url.substring(json.data.uri.url.indexOf(this.config.profile+'_')+3)
          this.log('TOKEN', token)
