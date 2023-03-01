@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.3",
     "buffer-replace": "^1.0.0",
-    "forever": "^0.15.3",
+    "forever": "^4.0.0",
     "glob": "^7.1.2",
     "jsonic": "^0.3.1",
     "phantom": "^6.0.3",
